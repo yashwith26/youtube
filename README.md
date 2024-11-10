@@ -76,3 +76,4 @@ Sidebar contains details like Home, Short, Subscription
 VideosContainer will have a child component VideoCard
 MainContainer includes child components - ButtonList and VideosContainer
 Body includes child components MainContainer and Sidebar
+WatchPage
