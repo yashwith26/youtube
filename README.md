@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+###Components Info
+Head conatiner the headers fields like logo and search
+ButtonList will have the the youtube buttons - All, Music, News
+Sidebar contains details like Home, Short, Subscription
+VideosContainer will have a child component VideoCard
+MainContainer includes child components - ButtonList and VideosContainer
+Body includes child components MainContainer and Sidebar
