@@ -10,6 +10,12 @@ const ButtonList = () => {
       <Button name="Live" />
       <Button name="Music" />
       <Button name="News" />
+      <Button name="Android" />
+      <Button name="Cooking" />
+      <Button name="Cooking" />
+      <Button name="Cooking" />
+      <Button name="Cooking" />
+      <Button name="Cooking" />
       <Button name="Cooking" />
     </div>
   );
