@@ -9,16 +9,15 @@ const Sidebar = () => {
 
   return (
     <div className="p-5 shadow-lg w-48">
-      <h1 className="font-bold">Subscriptions</h1>
       <ul>
-        <li>
+        <li className="text-lg">
           <Link to="/">Home</Link>
         </li>
-        <li>Shorts</li>
-        <li>Subscriptions</li>
+        <li className="text-lg">Shorts</li>
+        <li className="text-lg">Subscriptions</li>
       </ul>
 
-      <h1 className="font-bold pt-5">You</h1>
+      <h1 className="font-bold text-lg pt-5">You</h1>
       <ul>
         <li>History</li>
         <li>Playlists</li>
@@ -26,7 +25,7 @@ const Sidebar = () => {
         <li>Watch Later</li>
         <li>Lieked Videos</li>
       </ul>
-      <h1 className="font-bold pt-5">Subscriptions</h1>
+      <h1 className="font-bold text-lg pt-5">Subscriptions</h1>
       <ul>
         <li>Music</li>
         <li>Sports</li>
