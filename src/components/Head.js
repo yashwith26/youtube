@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { toggleMenu } from "./utils/appSlice";
-import { YOUTUBE_SEARCH_API } from "./utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleMenu } from "../utils/appSlice";
+import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { cacheResults } from "../utils/searchSlice";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestons, setSuggestionns] = useState([]);
   const [showsuggestons, setShowSuggestions] = useState(false);
 
+  const searchCache = useSelector((store) => store.search);
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      getSearchSuggestion();
+      if (searchCache[searchQuery]) {
+        setSuggestionns(searchCache[searchQuery]);
+      } else {
+        getSearchSuggestion();
+      }
     }, 200);
 
     return () => {
@@ -25,12 +32,13 @@ const Head = () => {
   };
 
   const getSearchSuggestion = async () => {
-    console.log(searchQuery);
+    // console.log(searchQuery);
 
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     console.log(json[1]);
     setSuggestionns(json[1]);
+    dispatch(cacheResults({ [searchQuery]: json[1] }));
   };
 
   return (
@@ -42,7 +50,6 @@ const Head = () => {
           src="./images/bars-solid.svg"
           alt="menu"
         />
-
         <img className="h-7 mx-7" src="./images/YouTube_Logo.svg" alt="logo" />
       </div>
 
